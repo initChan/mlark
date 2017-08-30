@@ -7,6 +7,7 @@
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0"
   },
+  "private": true,
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

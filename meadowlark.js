@@ -1,5 +1,5 @@
 var express = require('express');
-
+var fortune = require('./lib/fortune.js');
 var app = express();
 
 //set up handlebars view engine
@@ -22,19 +22,10 @@ app.get('/', function(req, res) {
 });
 
 
-var fortunes = [
-  "동쪽이 길하다",
-  "무지가 자랑이냐",
-  "먹고 살기 쉽지 않지?",
-  "마우스는 로지텍",
-  "스마트 폰은 애플",
-]; 
 
 
 app.get('/about', function(req, res) {
-  var randomFortune =
-    fortunes[Math.floor(Math.random() * fortunes.length)];
-  res.render('about', {fortune: randomFortune});
+  res.render('about', {fortune: fortune.getFortune});
   /*
   res.type('text/plain');
   res.send('About this page here... 낫띵...');
